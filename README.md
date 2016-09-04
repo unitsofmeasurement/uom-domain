@@ -8,3 +8,5 @@ Currently the following libraries/modules are defined
   * [**Health-API**](health/health-api) Healthcare API (reusable across Java ME or SE)
   * [**Halth**](health/health) Health Module (Java ME or SE)
   * [**Halth-Java8**](health/health-java8) Health Module (Java SE 8 and above)
+* [**Retail**](retail) Parent to Retail modules:
+  * [**Retail-API**](retail/retail-api) Retail API (reusable across Java ME or SE) still ***Pre-Alpha***
