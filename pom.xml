@@ -13,6 +13,7 @@
 	<modules>
 		<module>health</module>
 		<module>retail</module>
+		<module>cloud</module>
 	</modules>
 	<!-- ======================================================= -->
 	<!-- Build Settings -->
