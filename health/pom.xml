@@ -30,7 +30,7 @@
 			<dependency>
 				<groupId>tec.uom.domain</groupId>
 				<artifactId>uom-health-api</artifactId>
-				<version>${project.version}</version>
+				<version>${health.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
