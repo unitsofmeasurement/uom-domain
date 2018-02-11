@@ -78,18 +78,6 @@ public class MPUnits extends AbstractSystemOfUnits {
 	public static final SystemOfUnits getInstance() {
 		return INSTANCE;
 	}
-	//
-	// /**
-	// * Adds a new unit not mapped to any specified quantity type.
-	// *
-	// * @param unit
-	// * the unit being added.
-	// * @return <code>unit</code>.
-	// */
-	// private static <U extends Unit<?>> U addUnit(U unit) {
-	// INSTANCE.units.add(unit);
-	// return unit;
-	// }
 
 	/**
 	 * Adds a new unit and maps it to the specified quantity type.
