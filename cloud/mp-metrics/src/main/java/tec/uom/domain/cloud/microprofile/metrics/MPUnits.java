@@ -1,6 +1,6 @@
 /**
- *  Domain Specific Units of Measurement Extensions
- *  Copyright (c) 2005-2018, Jean-Marie Dautelle, Werner Keil and others.
+ * Domain Specific Units of Measurement Extensions
+ * Copyright (c) 2018, Units of Measurement
  *
  * All rights reserved.
  *
@@ -13,7 +13,7 @@
  * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions
  *    and the following disclaimer in the documentation and/or other materials provided with the distribution.
  *
- * 3. Neither the name of JSR-363, Unit-API nor the names of its contributors may be used to endorse or promote products
+ * 3. Neither the name of Unit-API, Units of Measurement nor the names of their contributors may be used to endorse or promote products
  *    derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
@@ -27,54 +27,48 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.domain.health.unit;
+package tec.uom.domain.cloud.microprofile.metrics;
+
+import static tec.units.indriya.AbstractUnit.ONE;
 
 import javax.measure.Unit;
 import javax.measure.spi.SystemOfUnits;
 
-import tec.uom.domain.health.Floor;
-import tec.uom.domain.health.HeartRate;
-import tec.uom.domain.health.Heartbeat;
-import tec.uom.domain.health.Step;
-import tec.uom.se.unit.ProductUnit;
-import tec.uom.se.AbstractSystemOfUnits;
-import tec.uom.se.unit.BaseUnit;
-import tec.uom.se.unit.Units;
+import org.eclipse.microprofile.metrics.MetricUnits;
+
+import systems.uom.quantity.Information;
+import tec.units.indriya.unit.ProductUnit;
+import tec.units.indriya.AbstractSystemOfUnits;
+import tec.units.indriya.AbstractUnit;
+import tec.units.indriya.unit.AlternateUnit;
+import tec.units.indriya.unit.BaseUnit;
+import tec.units.indriya.unit.Units;
 
 /**
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @version 0.7.2
  */
-public class Health extends AbstractSystemOfUnits {
+public class MPUnits extends AbstractSystemOfUnits {
 
 	/**
 	 * The singleton instance of {@code Health}.
 	 */
-	private static final Health INSTANCE = new Health();
+	private static final MPUnits INSTANCE = new MPUnits();
 
 	/**
 	 * Default constructor (prevents this class from being instantiated).
 	 */
-	private Health() {
+	private MPUnits() {
 	}
 
-	private static final Unit<Heartbeat> BEAT = addUnit(new BaseUnit<Heartbeat>(
-			"b"));
+    public static final Unit<Information> BITS = addUnit(new AlternateUnit<Information>(ONE, "bit"), "Bits", MetricUnits.BITS,  Information.class);
 
-	/** BPM */
-	public static final Unit<HeartRate> BPM = addUnit(new ProductUnit<HeartRate>(
-			BEAT.divide(Units.SECOND.multiply(60))));
+    public static final Unit<Information> BYTES = addUnit(BITS.multiply(8), "Bytes", MetricUnits.BYTES);
 
 	@Override
 	public String getName() {
-		return Health.class.getSimpleName();
+		return MPUnits.class.getSimpleName();
 	}
-
-	/** Step */
-	public static final Unit<Step> STEP = addUnit(new BaseUnit<Step>("st"));
-
-	/** Floor */
-	public static final Unit<Floor> FLOOR = addUnit(new BaseUnit<Floor>("flr"));
 
 	/**
 	 * Returns the singleton instance of this class.
@@ -106,15 +100,15 @@ public class Health extends AbstractSystemOfUnits {
 	 *            the name of the unit.
 	 * @return <code>unit</code>.
 	 */
-//	@SuppressWarnings({ "unchecked", "unused" })
-//	private static <U extends Unit<?>> U addUnit(U unit, String name) {
-//		if (name != null && unit instanceof AbstractUnit) {
-//			AbstractUnit<?> aUnit = (AbstractUnit<?>) unit;
-//			// aUnit.setName(name);
-//			INSTANCE.units.add(aUnit);
-//			return (U) aUnit;
-//		}
-//		INSTANCE.units.add(unit);
-//		return unit;
-//	}
+	@SuppressWarnings({ "unchecked", "unused" })
+	private static <U extends Unit<?>> U addUnit(U unit, String name, String label) {
+		if (name != null && unit instanceof AbstractUnit) {
+			AbstractUnit<?> aUnit = (AbstractUnit<?>) unit;
+			// aUnit.setName(name);
+			INSTANCE.units.add(aUnit);
+			return (U) aUnit;
+		}
+		INSTANCE.units.add(unit);
+		return unit;
+	}
 }

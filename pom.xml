@@ -23,8 +23,8 @@
 		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-		<ri.version>0.9</ri.version>
-		<se.version>0.9</se.version>
+		<ri.version>1.0</ri.version>
+		<se.version>1.0.8</se.version>
 		<lib.version>${project.version}</lib.version>
 	</properties>
 
@@ -38,6 +38,11 @@
 			<dependency>
 				<groupId>tec.units</groupId>
 				<artifactId>unit-ri</artifactId>
+				<version>${ri.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>tec.units</groupId>
+				<artifactId>indriya</artifactId>
 				<version>${ri.version}</version>
 			</dependency>
 			<dependency>
