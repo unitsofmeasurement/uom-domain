@@ -30,6 +30,7 @@
 package tec.uom.domain.cloud.microprofile.metrics;
 
 import static tec.uom.se.AbstractUnit.ONE;
+import static tec.uom.se.unit.MetricPrefix.*;
 
 import javax.measure.Quantity;
 import javax.measure.Unit;
@@ -60,11 +61,40 @@ public class MPUnits extends AbstractSystemOfUnits {
 	private MPUnits() {
 	}
 
-	public static final Unit<Information> BITS = addUnit(new AlternateUnit<Information>(ONE, "bit"), "Bits",
-			MetricUnits.BITS, Information.class);
+	/* 8 {@link #BITS} */
+	public static final Unit<Information> BYTES = 
+			addUnit(new AlternateUnit<Information>(ONE, "bytes"), "Bytes",
+					MetricUnits.BYTES, Information.class);
+			//addUnit(BITS.multiply(8), "Bytes", MetricUnits.BYTES);
+	
+	/* Represents bits. Not defined by SI, but by IEC 60027 */
+	public static final Unit<Information> BITS = addUnit(BYTES.divide(8), "Bits", MetricUnits.BITS);
 
-	public static final Unit<Information> BYTES = addUnit(BITS.multiply(8), "Bytes", MetricUnits.BYTES);
+	/* 1000 {@link #BITS} */
+	public static final Unit<Information> KILOBITS = addUnit(KILO(BITS), "Kilobits", MetricUnits.KILOBITS);
+	
+///* 1000 {@link #KIBIBITS} */
+//case MetricUnits.MEGABITS:
+///* 1000 {@link #MEGABITS} */
+//case MetricUnits.GIGABITS:
+///* 1024 {@link #BITS} */
+//case MetricUnits.KIBIBITS:
+///* 1024 {@link #KIBIBITS}  */
+//case MetricUnits.MEBIBITS:
+///* 1024 {@link #MEBIBITS} */
+//case MetricUnits.GIBIBITS:
+///* 8 {@link #BITS} */
+//case MetricUnits.BYTES:
+///* 1000 {@link #BYTES} */
+//case MetricUnits.KILOBYTES:
+///* 1000 {@link #KILOBYTES} */
+//case MetricUnits.MEGABYTES:
+///* 1000 {@link #MEGABYTES} */
+//case MetricUnits.GIGABYTES:
+//    out = "bytes";
+//    break;
 
+	
 	@Override
 	public String getName() {
 		return MPUnits.class.getSimpleName();
