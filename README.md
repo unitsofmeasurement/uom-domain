@@ -2,6 +2,8 @@
 
 Units of Measurement Domain Specific Modules
 
+[![CircleCI](https://circleci.com/gh/unitsofmeasurement/uom-domain.svg?style=svg)](https://circleci.com/gh/unitsofmeasurement/uom-domain)
+
 Currently the following libraries/modules are defined
 
 * [**Cloud**](cloud) Parent to Cloud modules:
