@@ -46,7 +46,7 @@ import tec.uom.se.unit.AlternateUnit;
 
 /**
  * @author <a href="mailto:werner.keil@gmx.net">Werner Keil</a>
- * @version 0.7.2
+ * @version 0.9
  */
 public class MPUnits extends AbstractSystemOfUnits {
 
