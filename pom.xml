@@ -23,10 +23,10 @@
 		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-		<ri.version>1.0</ri.version>
+		<ri.version>1.0.3</ri.version>
 		<se.version>1.0.8</se.version>
-		<lib.version>1.0</lib.version>
-		<health.version>0.9-SNAPSHOT</health.version>
+		<lib.version>1.0.2</lib.version>
+		<health.version>0.9</health.version>
 	</properties>
 
 	<dependencyManagement>
