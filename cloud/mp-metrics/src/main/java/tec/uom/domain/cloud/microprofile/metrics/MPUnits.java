@@ -85,6 +85,7 @@ public class MPUnits extends AbstractSystemOfUnits {
 	 *            the unit being added.
 	 * @return <code>unit</code>.
 	 */
+	@SuppressWarnings("unused")
 	private static <U extends Unit<?>> U addUnit(U unit) {
 		INSTANCE.units.add(unit);
 		return unit;
@@ -99,7 +100,7 @@ public class MPUnits extends AbstractSystemOfUnits {
 	 *            the name of the unit.
 	 * @return <code>unit</code>.
 	 */
-	@SuppressWarnings({ "unchecked", "unused" })
+	@SuppressWarnings({ "unchecked" })
 	private static <U extends Unit<?>> U addUnit(U unit, String name, String label) {
 		if (name != null && unit instanceof AbstractUnit) {
 			AbstractUnit<?> aUnit = (AbstractUnit<?>) unit;
