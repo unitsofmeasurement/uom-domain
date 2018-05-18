@@ -31,22 +31,20 @@ package tec.uom.domain.cloud.microprofile.metrics;
 
 import static tec.units.indriya.AbstractUnit.ONE;
 
+import javax.measure.Quantity;
 import javax.measure.Unit;
 import javax.measure.spi.SystemOfUnits;
 
 import org.eclipse.microprofile.metrics.MetricUnits;
 
 import systems.uom.quantity.Information;
-import tec.units.indriya.unit.ProductUnit;
 import tec.units.indriya.AbstractSystemOfUnits;
 import tec.units.indriya.AbstractUnit;
 import tec.units.indriya.unit.AlternateUnit;
-import tec.units.indriya.unit.BaseUnit;
-import tec.units.indriya.unit.Units;
 
 /**
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.7.2
+ * @version 0.8
  */
 public class MPUnits extends AbstractSystemOfUnits {
 
@@ -61,9 +59,10 @@ public class MPUnits extends AbstractSystemOfUnits {
 	private MPUnits() {
 	}
 
-    public static final Unit<Information> BITS = addUnit(new AlternateUnit<Information>(ONE, "bit"), "Bits", MetricUnits.BITS,  Information.class);
+	public static final Unit<Information> BITS = addUnit(new AlternateUnit<Information>(ONE, "bit"), "Bits",
+			MetricUnits.BITS, Information.class);
 
-    public static final Unit<Information> BYTES = addUnit(BITS.multiply(8), "Bytes", MetricUnits.BYTES);
+	public static final Unit<Information> BYTES = addUnit(BITS.multiply(8), "Bytes", MetricUnits.BYTES);
 
 	@Override
 	public String getName() {
@@ -109,6 +108,21 @@ public class MPUnits extends AbstractSystemOfUnits {
 			return (U) aUnit;
 		}
 		INSTANCE.units.add(unit);
+		return unit;
+	}
+
+	/**
+	 * Adds a new unit and maps it to the specified quantity type.
+	 *
+	 * @param unit
+	 *            the unit being added.
+	 * @param type
+	 *            the quantity type.
+	 * @return <code>unit</code>.
+	 */
+	private static <U extends AbstractUnit<?>> U addUnit(U unit, String name, String label, Class<? extends Quantity<?>> type) {
+		INSTANCE.units.add(unit);
+		INSTANCE.quantityToUnit.put(type, unit);
 		return unit;
 	}
 }
