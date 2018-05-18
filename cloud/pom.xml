@@ -9,6 +9,7 @@
   <packaging>pom</packaging>
   <name>Units of Measurement for Cloud Computing</name>
   <modules>
+  	<module>mp-metrics</module>
   	<module>mp-metrics-java8</module>
   </modules>
 </project>

@@ -7,8 +7,8 @@
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 	<artifactId>uom-mp-metrics-java8</artifactId>
-	<name>Units of Measurement for MicroProfile Metrics</name>
-	<description>Units of Measurement Support for MicroProfile Metrics</description>
+	<name>Units of Measurement for MicroProfile Metrics SE 8</name>
+	<description>Units of Measurement Support for MicroProfile Metrics on Java SE 8</description>
 	<inceptionYear>2018</inceptionYear>
 
 	<!-- ======================================================= -->
@@ -39,7 +39,7 @@
 			<dependency>
 			<groupId>systems.uom</groupId>
 			<artifactId>systems-quantity</artifactId>
-			<version>0.7.2</version>
+			<version>0.8</version>
 		</dependency>
 		<dependency>
 			<groupId>org.eclipse.microprofile.metrics</groupId>
