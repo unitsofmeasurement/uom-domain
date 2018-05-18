@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>tec.uom</groupId>
 		<artifactId>uom-parent</artifactId>
-		<version>1.0-SNAPSHOT</version>
+		<version>1.0</version>
 	</parent>
 	<groupId>tec.uom.domain</groupId>
 	<artifactId>uom-domain</artifactId>
@@ -96,4 +96,5 @@
 			<url>scp://unitsofmeasurement.github.io/www/docs/lib/</url>
 		</site>
 	</distributionManagement>
+	<version>1.0-SNAPSHOT</version>
 </project>
