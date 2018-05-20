@@ -57,7 +57,8 @@ public class Imaging extends AbstractSystemOfUnits {
     /**
      * Equivalent {@link #BYTE}
      */
-    private static final Unit<Information> OCTET = BYTE;
+    @SuppressWarnings("unused")
+	private static final Unit<Information> OCTET = BYTE;
 
     /**
      * A pixel has 4 channels which define transparency (alpha), red, green and
@@ -66,7 +67,7 @@ public class Imaging extends AbstractSystemOfUnits {
      * @see #BYTE
      * @see <a href="http://www.convert-me.com/en/convert/length/pixel.html?u=pixel&v=177">Pixel Converter</a>
      */
-    protected static final Unit<Information> PIXEL_BYTE = addUnit(BYTE.multiply(4.0));
+    public static final Unit<Information> PIXEL_BYTE = addUnit(BYTE.multiply(4.0));
 
     
     /**
@@ -83,12 +84,13 @@ public class Imaging extends AbstractSystemOfUnits {
      * @see #INCH
      * @see #PIXEL
      */
-    protected static final Unit<Resolution> PIXEL_PER_INCH = addUnit(PIXEL.divide(INCH).asType(Resolution.class));
+    public static final Unit<Resolution> PIXEL_PER_INCH = addUnit(PIXEL.divide(INCH).asType(Resolution.class));
 
     /**
      * Equivalent {@link #PIXEL}
      */
-    private static final Unit<Length> COMPUTER_POINT = PIXEL;
+    @SuppressWarnings("unused")
+	private static final Unit<Length> COMPUTER_POINT = PIXEL;
 
 	
 	/**
