@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
@@ -10,10 +11,12 @@
 	<artifactId>uom-domain</artifactId>
 	<packaging>pom</packaging>
 	<name>Units of Measurement Domain Specific Modules</name>
+	<version>1.0-SNAPSHOT</version>
 	<modules>
-		<module>health</module>
-		<module>retail</module>
 		<module>cloud</module>
+		<module>health</module>
+		<module>imaging</module>
+		<module>retail</module>
 	</modules>
 	<!-- ======================================================= -->
 	<!-- Build Settings -->
@@ -34,7 +37,7 @@
 			<dependency>
 				<groupId>tec.uom.lib</groupId>
 				<artifactId>uom-lib-common</artifactId>
-				<version>${project.version}</version>
+				<version>${lib.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>tec.units</groupId>
@@ -53,7 +56,7 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	
+
 	<!-- Additional repositories -->
 	<!-- Helps to resolve Parent POM and Snapshot artifacts -->
 	<repositories>
@@ -96,5 +99,4 @@
 			<url>scp://unitsofmeasurement.github.io/www/docs/lib/</url>
 		</site>
 	</distributionManagement>
-	<version>1.0-SNAPSHOT</version>
 </project>
