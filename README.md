@@ -3,6 +3,7 @@
 Units of Measurement Domain Specific Modules
 
 [![CircleCI](https://circleci.com/gh/unitsofmeasurement/uom-domain.svg?style=svg)](https://circleci.com/gh/unitsofmeasurement/uom-domain)
+[![Stability: Experimental](https://masterminds.github.io/stability/experimental.svg)](https://masterminds.github.io/stability/experimental.html)
 
 Currently the following libraries/modules are defined
 
