@@ -27,7 +27,7 @@
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
 		<ri.version>1.0.3</ri.version>
-		<se.version>1.0.8</se.version>
+		<se.version>1.0.10</se.version>
 		<lib.version>1.0.2</lib.version>
 		<health.version>0.9</health.version>
 	</properties>
