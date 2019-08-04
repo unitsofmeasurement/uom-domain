@@ -36,12 +36,12 @@ import java.util.Map;
 import javax.measure.spi.SystemOfUnits;
 import javax.measure.spi.SystemOfUnitsService;
 
-import tec.uom.lib.common.function.IntPrioritySupplier;
+import tech.uom.lib.common.function.IntPrioritySupplier;
 import tech.uom.domain.imaging.Imaging;
 
 /**
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.7, May 20, 2018
+ * @version 0.9, August 04, 2019
  */
 class ImagingSystemService implements SystemOfUnitsService, IntPrioritySupplier {
 	private static final int PRIO = 20;

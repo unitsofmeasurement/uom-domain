@@ -31,7 +31,7 @@ package tech.uom.domain.imaging;
 
 import static systems.uom.unicode.CLDR.BYTE;
 import static systems.uom.unicode.CLDR.INCH;
-import static tec.units.indriya.unit.Units.METRE;
+import static tech.units.indriya.unit.Units.METRE;
 
 import javax.measure.Quantity;
 import javax.measure.Unit;
@@ -40,12 +40,12 @@ import javax.measure.spi.SystemOfUnits;
 
 import systems.uom.quantity.Information;
 import systems.uom.quantity.Resolution;
-import tec.units.indriya.AbstractSystemOfUnits;
-import tec.units.indriya.AbstractUnit;
+import tech.units.indriya.AbstractSystemOfUnits;
+import tech.units.indriya.AbstractUnit;
 
 /**
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.1
+ * @version 0.3
  */
 public class Imaging extends AbstractSystemOfUnits {
 

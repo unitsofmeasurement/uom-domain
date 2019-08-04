@@ -32,6 +32,7 @@ package tech.uom.domain.imaging;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
+import javax.measure.MetricPrefix;
 import javax.measure.IncommensurableException;
 import javax.measure.UnconvertibleException;
 import javax.measure.quantity.Length;
@@ -39,10 +40,9 @@ import javax.measure.quantity.Length;
 import org.junit.Test;
 
 import systems.uom.quantity.Resolution;
-import tec.units.indriya.ComparableQuantity;
-import tec.units.indriya.quantity.Quantities;
-import tec.units.indriya.unit.MetricPrefix;
-import tec.units.indriya.unit.Units;
+import tech.units.indriya.ComparableQuantity;
+import tech.units.indriya.quantity.Quantities;
+import tech.units.indriya.unit.Units;
 
 public class PixelTest {
 

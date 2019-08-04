@@ -1,4 +1,4 @@
-/**
+/*
  *  Unit-API - Units of Measurement API for Java
  *  Copyright 2013-2015, Jean-Marie Dautelle, Werner Keil, V2COM and individual
  *  contributors by the @author tag.
@@ -28,19 +28,19 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.domain.health.types;
+package tech.uom.domain.health.types;
 
-import static tec.uom.domain.health.types.BMIRange.Category.*;
-import static tec.uom.se.AbstractQuantity.NONE;
+import static tech.units.indriya.AbstractQuantity.NONE;
+import static tech.uom.domain.health.types.BMIRange.Category.*;
 
 import javax.measure.Quantity;
 
-import tec.uom.lib.common.function.Nameable;
-import tec.uom.se.spi.Range;
+import tech.units.indriya.spi.Range;
+import tech.uom.lib.common.function.Nameable;
 
 /**
  * @author Werner Keil
- * @version 0.4
+ * @version 0.8
  * @see <a href="http://en.wikipedia.org/wiki/Body_Mass_index"> Wikipedia:
  *      BMI</a>
  */

@@ -27,12 +27,12 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.domain.health.unit;
+package tech.uom.domain.health.unit;
 
 import javax.measure.Unit;
 /*
  *  Unit-API - Units of Measurement API for Java
- *  Copyright 2013-2015, Jean-Marie Dautelle, Werner Keil, V2COM and individual
+ *  Copyright 2013-2019, Werner Keil and individual
  *  contributors by the @author tag.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -51,13 +51,13 @@ import tec.uom.domain.health.Floor;
 import tec.uom.domain.health.HeartRate;
 import tec.uom.domain.health.Heartbeat;
 import tec.uom.domain.health.Step;
-import tec.units.ri.AbstractSystemOfUnits;
-import tec.units.ri.unit.Units;
-import tec.units.ri.unit.BaseUnit;
+import tech.units.indriya.AbstractSystemOfUnits;
+import tech.units.indriya.unit.Units;
+import tech.units.indriya.unit.BaseUnit;
 
 /**
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.5.4
+ * @version 0.6
  */
 public class Health extends AbstractSystemOfUnits {
 

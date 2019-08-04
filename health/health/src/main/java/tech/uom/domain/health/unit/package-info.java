@@ -1,6 +1,6 @@
 /**
- *  Domain Specific Units of Measurement Extensions
- *  Copyright (c) 2005-2018, Jean-Marie Dautelle, Werner Keil and others.
+ *  Unit-API - Units of Measurement API for Java
+ *  Copyright (c) 2005-2014, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -31,4 +31,4 @@
  * @author Werner Keil
  *
  */
-package tec.uom.domain.health.unit;
+package tech.uom.domain.health.unit;

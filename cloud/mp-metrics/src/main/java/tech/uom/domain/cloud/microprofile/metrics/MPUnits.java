@@ -29,7 +29,7 @@
  */
 package tech.uom.domain.cloud.microprofile.metrics;
 
-import static tec.units.indriya.AbstractUnit.ONE;
+import static tech.units.indriya.AbstractUnit.ONE;
 
 import javax.measure.Quantity;
 import javax.measure.Unit;
@@ -38,13 +38,13 @@ import javax.measure.spi.SystemOfUnits;
 import org.eclipse.microprofile.metrics.MetricUnits;
 
 import systems.uom.quantity.Information;
-import tec.units.indriya.AbstractSystemOfUnits;
-import tec.units.indriya.AbstractUnit;
-import tec.units.indriya.unit.AlternateUnit;
+import tech.units.indriya.AbstractSystemOfUnits;
+import tech.units.indriya.AbstractUnit;
+import tech.units.indriya.unit.AlternateUnit;
 
 /**
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.8
+ * @version 1.0
  */
 public class MPUnits extends AbstractSystemOfUnits {
 

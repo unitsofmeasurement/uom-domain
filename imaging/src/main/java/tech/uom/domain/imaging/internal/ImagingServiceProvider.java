@@ -31,16 +31,16 @@ package tech.uom.domain.imaging.internal;
 
 import javax.measure.spi.ServiceProvider;
 import javax.measure.spi.SystemOfUnitsService;
-import tec.units.indriya.spi.DefaultServiceProvider;
+import tech.units.indriya.spi.AbstractServiceProvider;
 
 /**
  * This class implements the {@link ServiceProvider} interface and hereby uses
  * the JDK {@link java.util.ServiceLoader} to load the services required.
  *
  * @author Werner Keil
- * @version 0.1
+ * @version 0.3
  */
-public class ImagingServiceProvider extends DefaultServiceProvider {
+public class ImagingServiceProvider extends AbstractServiceProvider {
 
 	public int getPriority() {
 		return 800;
