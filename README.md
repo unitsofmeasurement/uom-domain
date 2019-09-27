@@ -10,9 +10,8 @@ Currently the following libraries/modules are defined
 * [**Cloud**](cloud) Parent to Cloud modules:
   * [**MicroProfile-Metrics**](cloud/mp-metrics) Eclipse MicroProfile Metrics Module based on Indriya
 * [**Health**](health) Parent to Health modules:
-  * [**Health-API**](health/health-api) Healthcare API (reusable across Java ME or SE)
-  * [**Health**](health/health) Health Module (Java ME or SE)
-  * [**Health-Java8**](health/health-java8) Health Module (Java SE 8 and above)
+  * [**Health-API**](health/health-api) Healthcare API (reusable across multiple platforms)
+  * [**Health**](health/health) Health Module (Java SE 8 and above)
 * [**Imaging**](imaging) Digital Imaging Unit module
 * [**Retail**](retail) Parent to Retail modules:
   * [**Retail-API**](retail/retail-api) Retail API (reusable across Java ME or SE) still ***Pre-Alpha***
