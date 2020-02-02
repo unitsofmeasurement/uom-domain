@@ -55,7 +55,7 @@ public class SystemOfUnitsServiceTest {
 	@Test
 	public void testDefaultUnitSystemService() {
 		assertNotNull(defaultService);
-		assertEquals("tech.units.indriya.internal.DefaultSystemOfUnitsService", defaultService.getClass().getName());
+		assertEquals("tech.units.indriya.unit.DefaultSystemOfUnitsService", defaultService.getClass().getName());
 		SystemOfUnits system = defaultService.getSystemOfUnits();
 		assertNotNull(system);
 		assertEquals("tech.units.indriya.unit.Units", system.getClass().getName());
@@ -68,7 +68,7 @@ public class SystemOfUnitsServiceTest {
 	// TODO consolidate asserts
 	public void testUnitSystemServiceAlias() {
 		assertNotNull(defaultService);
-		assertEquals("tech.units.indriya.internal.DefaultSystemOfUnitsService", defaultService.getClass().getName());
+		assertEquals("tech.units.indriya.unit.DefaultSystemOfUnitsService", defaultService.getClass().getName());
 		SystemOfUnits system = defaultService.getSystemOfUnits("Imaging");
 		//assertNotNull(system);
 //		assertEquals("tech.uom.domain.imaging.Imaging", system.getClass().getName());
