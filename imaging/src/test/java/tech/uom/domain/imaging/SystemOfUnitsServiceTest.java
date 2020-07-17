@@ -1,6 +1,6 @@
 /*
  * Domain Specific Units of Measurement Extensions
- * Copyright (c) 2018, Units of Measurement
+ * Copyright (c) 2018-2020, Units of Measurement
  *
  * All rights reserved.
  *
@@ -38,8 +38,8 @@ import javax.measure.spi.ServiceProvider;
 import javax.measure.spi.SystemOfUnits;
 import javax.measure.spi.SystemOfUnitsService;
 
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 public class SystemOfUnitsServiceTest {
 	private static final String EXPECTED_SYSTEM_NAME = "Imaging";
@@ -47,7 +47,7 @@ public class SystemOfUnitsServiceTest {
 
 	private static SystemOfUnitsService defaultService;
 
-	@BeforeClass
+	@BeforeAll
 	public static void setUp() {
 		defaultService = ServiceProvider.current().getSystemOfUnitsService();
 	}
@@ -61,7 +61,7 @@ public class SystemOfUnitsServiceTest {
 		assertEquals("tech.units.indriya.unit.Units", system.getClass().getName());
 		assertEquals("Units", system.getName());
 		assertNotNull(system.getUnits());
-		assertEquals(43, system.getUnits().size());
+		assertEquals(44, system.getUnits().size());
 	}
 
 	@Test
