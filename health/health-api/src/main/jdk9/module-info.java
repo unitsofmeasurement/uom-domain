@@ -1,6 +1,6 @@
-/**
- *  Unit-API - Units of Measurement API for Java
- *  Copyright (c) 2005-2014, Jean-Marie Dautelle, Werner Keil, V2COM.
+/*
+ * Units of Measurement Health Library for Java
+ * Copyright (c) 2015-2020, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -13,7 +13,7 @@
  * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions
  *    and the following disclaimer in the documentation and/or other materials provided with the distribution.
  *
- * 3. Neither the name of JSR-363, Unit-API nor the names of its contributors may be used to endorse or promote products
+ * 3. Neither the name of JSR-385, Units of Measurement nor the names of their contributors may be used to endorse or promote products
  *    derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
@@ -27,16 +27,8 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.domain.health;
-
-import javax.measure.Quantity;
-
-/**
- * Step is a unit of steps.
- * 
- * @author <a href="mailto:uomo@catmedia.us">Werner Keil</a>
- * @version 1.0
- */
-public interface Step extends Quantity<Step> {
-
+module tech.uom.health.api {
+    requires java.measure;
+    
+    exports tech.uom.domain.health;
 }

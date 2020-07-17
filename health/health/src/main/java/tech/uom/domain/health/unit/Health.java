@@ -47,12 +47,12 @@ import javax.measure.Unit;
  */
 import javax.measure.spi.SystemOfUnits;
 
-import tec.uom.domain.health.Floor;
-import tec.uom.domain.health.HeartRate;
-import tec.uom.domain.health.Heartbeat;
-import tec.uom.domain.health.Step;
 import tech.units.indriya.AbstractSystemOfUnits;
 import tech.units.indriya.unit.Units;
+import tech.uom.domain.health.Floor;
+import tech.uom.domain.health.HeartRate;
+import tech.uom.domain.health.Heartbeat;
+import tech.uom.domain.health.Step;
 import tech.units.indriya.unit.BaseUnit;
 
 /**

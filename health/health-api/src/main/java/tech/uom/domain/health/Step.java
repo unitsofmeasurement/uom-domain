@@ -27,16 +27,16 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.domain.health;
+package tech.uom.domain.health;
 
 import javax.measure.Quantity;
 
 /**
- * Heartbeat is a unit of heart beats.
+ * Step is a unit of steps.
  * 
  * @author <a href="mailto:uomo@catmedia.us">Werner Keil</a>
  * @version 1.0
  */
-public interface Heartbeat extends Quantity<Heartbeat> {
+public interface Step extends Quantity<Step> {
 
 }
