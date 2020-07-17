@@ -5,9 +5,9 @@
     <artifactId>uom-domain</artifactId>
     <version>2.0-SNAPSHOT</version>
   </parent>
-  <artifactId>uom-energy</artifactId>
+  <artifactId>uom-energy-parent</artifactId>
   <packaging>pom</packaging>
-  <name>Units of Measurement for Energy</name>
+  <name>Units of Measurement Energy Parent</name>
   <modules>
   	<module>quantity</module>
   </modules>
