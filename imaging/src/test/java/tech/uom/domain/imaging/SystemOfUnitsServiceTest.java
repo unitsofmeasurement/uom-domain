@@ -43,8 +43,9 @@ import org.junit.jupiter.api.Test;
 
 public class SystemOfUnitsServiceTest {
 	private static final String EXPECTED_SYSTEM_NAME = "Imaging";
-	private static final int NUM_OF_UNITS_IMG = 3;
-
+	//private static final int NUM_OF_UNITS_IMG = 2;
+	private static final int NUM_OF_PROVIDERS = 2;
+	
 	private static SystemOfUnitsService defaultService;
 
 	@BeforeAll
@@ -69,7 +70,7 @@ public class SystemOfUnitsServiceTest {
 	public void testUnitSystemServiceAlias() {
 		assertNotNull(defaultService);
 		assertEquals("tech.units.indriya.unit.DefaultSystemOfUnitsService", defaultService.getClass().getName());
-		SystemOfUnits system = defaultService.getSystemOfUnits("Imaging");
+		SystemOfUnits system = defaultService.getSystemOfUnits(EXPECTED_SYSTEM_NAME);
 		//assertNotNull(system);
 //		assertEquals("tech.uom.domain.imaging.Imaging", system.getClass().getName());
 //		assertEquals("Imaging", system.getName());
@@ -83,7 +84,7 @@ public class SystemOfUnitsServiceTest {
 	public void testOtherUnitSystemServiceNumber() {
 		final Collection<ServiceProvider> providers = ServiceProvider.available();
 		assertNotNull(providers);
-		assertEquals(3, providers.size());
+		assertEquals(NUM_OF_PROVIDERS, providers.size());
 	}
 
 	@Test
