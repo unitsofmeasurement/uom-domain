@@ -12,11 +12,6 @@
             <groupId>javax.measure</groupId>
             <artifactId>unit-api</artifactId>
         </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
     <name>Units of Measurement Retail API</name>
 </project>

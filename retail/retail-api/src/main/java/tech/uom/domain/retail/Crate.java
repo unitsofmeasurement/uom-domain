@@ -1,4 +1,4 @@
-package tec.uom.domain.retail;
+package tech.uom.domain.retail;
 
 import javax.measure.Quantity;
 
