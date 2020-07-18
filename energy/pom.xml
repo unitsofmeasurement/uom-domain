@@ -9,7 +9,7 @@
 	</parent>
 	<artifactId>uom-energy-quantity</artifactId>
 	<name>Units of Measurement Energy Quantities</name>
-	   <licenses>
+	<licenses>
         <license>
             <name>BSD 3-Clause</name>
             <url>LICENSE</url>
