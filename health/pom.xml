@@ -1,30 +1,62 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>tech.uom.domain</groupId>
-		<artifactId>uom-domain</artifactId>
-		<version>2.0-SNAPSHOT</version>
-	</parent>
+
 	<artifactId>uom-health-parent</artifactId>
 	<packaging>pom</packaging>
-	<name>Units of Measurement Health Specific Modules</name>
+
+	<name>Units of Measurement Health Parent</name>
+	<description>A parent for Units of Measurement Health</description>
+	<url>https://github.com/unitsofmeasurement/uom-domain/tree/master/health</url>
+
+	<licenses>
+		<license>
+			<name>BSD 3-Clause</name>
+			<url>LICENSE</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<id>keilw</id>
+			<name>Werner Keil</name>
+			<email>werner@catmedia.us</email>
+			<organization>Creative Arts &amp; Technologies</organization>
+			<organizationUrl>http://www.catmedia.us</organizationUrl>
+			<timezone>+1</timezone>
+			<roles>
+				<role>Architect</role>
+				<role>Java Developer</role>
+				<role>Spec Lead</role>
+			</roles>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:git://https://github.com/unitsofmeasurement/uom-domain.git</connection>
+		<developerConnection>scm:git:ssh://github.com/unitsofmeasurement/uom-domain.git</developerConnection>
+		<url>http://github.com/unitsofmeasurement/uom-domain/tree/master</url>
+	</scm>
+
 	<modules>
 		<module>health-api</module>
 		<module>health</module>
 	</modules>
 
+	<parent>
+		<version>2.0</version>
+		<groupId>tech.uom.domain</groupId>
+		<artifactId>uom-domain</artifactId>
+	</parent>
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>tech.units</groupId>
-				<artifactId>indriya</artifactId>
-				<version>${ri.version}</version>
-			</dependency>
-			<dependency>
 				<groupId>tech.uom.domain</groupId>
 				<artifactId>uom-health-api</artifactId>
-				<version>${health.version}</version>
+				<version>2.0</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>

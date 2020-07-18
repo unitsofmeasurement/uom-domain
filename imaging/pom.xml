@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>tech.uom.domain</groupId>
 		<artifactId>uom-domain</artifactId>
-		<version>2.0-SNAPSHOT</version>
+		<version>2.0</version>
 	</parent>
 	<artifactId>uom-imaging</artifactId>
 	<name>Units of Measurement for Imaging</name>
@@ -38,12 +38,12 @@
 		<dependency>
 			<groupId>systems.uom</groupId>
 			<artifactId>systems-quantity</artifactId>
-			<version>2.0.1</version>
+			<version>2.0.2</version>
 		</dependency>
 		<dependency>
 			<groupId>systems.uom</groupId>
 			<artifactId>systems-unicode</artifactId>
-			<version>2.0.1</version>
+			<version>2.0.2</version>
 		</dependency>
 
 		<dependency>
