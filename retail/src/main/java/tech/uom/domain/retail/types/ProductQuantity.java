@@ -34,13 +34,13 @@ import tech.uom.domain.retail.quantity.Each;
 
 import javax.measure.Unit;
 
-public class ProductAmount extends NumberQuantity<Each> implements Each {
+public class ProductQuantity extends NumberQuantity<Each> implements Each {
 
-    protected ProductAmount(Number number, Unit<Each> unit) {
+    protected ProductQuantity(Number number, Unit<Each> unit) {
         super(number, unit);
     }
 
-    public static ProductAmount of(Number number, Unit<Each> unit) {
-        return new ProductAmount(number, unit);
+    public static ProductQuantity of(Number number, Unit<Each> unit) {
+        return new ProductQuantity(number, unit);
     }
 }
