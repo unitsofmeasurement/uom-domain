@@ -31,5 +31,5 @@ package tech.uom.domain.retail.quantity;
 
 import javax.measure.Quantity;
 
-public interface Crate extends Quantity<Each> {
+public interface Each extends Quantity<Each> {
 }

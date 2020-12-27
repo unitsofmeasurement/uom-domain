@@ -29,6 +29,7 @@
  */
 module tech.uom.domain.retail.quantity {
     requires transitive java.measure;
+    requires tech.units.indriya;
 
     exports tech.uom.domain.retail.quantity;
 }
