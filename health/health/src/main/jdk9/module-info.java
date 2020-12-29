@@ -31,6 +31,7 @@ module tech.uom.health {
     requires transitive java.measure;
     requires tech.units.indriya;
     requires tech.uom.health.api;
+    requires tech.uom.lib.common;
     
     exports tech.uom.domain.health.types;
     exports tech.uom.domain.health.unit;

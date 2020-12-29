@@ -32,6 +32,7 @@ module tech.uom.domain.imaging {
     requires transitive tech.units.indriya;
     requires transitive systems.uom.quantity;
     requires systems.uom.unicode;
-    
+    requires tech.uom.lib.common;
+
     exports tech.uom.domain.imaging;
 }
