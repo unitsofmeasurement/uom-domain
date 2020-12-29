@@ -30,6 +30,7 @@
 module tech.uom.domain.retail.quantity {
     requires transitive java.measure;
     requires tech.units.indriya;
-
+    requires tech.uom.lib.common;
+    
     exports tech.uom.domain.retail.quantity;
 }
