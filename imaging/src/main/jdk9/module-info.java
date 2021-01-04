@@ -1,6 +1,6 @@
 /*
  * Units of Measurement Imaging Library for Java
- * Copyright (c) 2018-2020, Werner Keil and others.
+ * Copyright (c) 2018-2021, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -35,4 +35,5 @@ module tech.uom.domain.imaging {
     requires tech.uom.lib.common;
 
     exports tech.uom.domain.imaging;
+    exports tech.uom.domain.imaging.spi;
 }

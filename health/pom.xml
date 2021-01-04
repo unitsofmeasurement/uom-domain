@@ -6,7 +6,7 @@
     <parent>
         <groupId>tech.uom.domain</groupId>
         <artifactId>uom-domain</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
+        <version>2.1-SNAPSHOT</version>
     </parent>
 
 	<artifactId>uom-health-parent</artifactId>
@@ -15,6 +15,10 @@
 	<name>Units of Measurement Health Parent</name>
 	<description>A parent for Units of Measurement Health</description>
 	<url>https://github.com/unitsofmeasurement/uom-domain/tree/master/health</url>
+
+    <properties>
+        <health.version>2.1-SNAPSHOT</health.version>
+    </properties>
 
 	<licenses>
 		<license>
@@ -42,7 +46,7 @@
 	<scm>
 		<connection>scm:git:git://https://github.com/unitsofmeasurement/uom-domain.git</connection>
 		<developerConnection>scm:git:ssh://github.com/unitsofmeasurement/uom-domain.git</developerConnection>
-		<url>http://github.com/unitsofmeasurement/uom-domain/tree/master</url>
+		<url>https://github.com/unitsofmeasurement/uom-domain/tree/master</url>
 	</scm>
 
 	<modules>

@@ -1,6 +1,6 @@
 /*
  * Domain Specific Units of Measurement Extensions
- * Copyright (c) 2018-2020, Units of Measurement
+ * Copyright (c) 2018-2021, Units of Measurement
  *
  * All rights reserved.
  *
@@ -43,40 +43,40 @@ import org.junit.jupiter.api.Test;
 
 public class SystemOfUnitsServiceTest {
 	private static final String EXPECTED_SYSTEM_NAME = "Imaging";
-	//private static final int NUM_OF_UNITS_IMG = 2;
+	//private static final int NUM_OF_UNITS_IMG = 3;
 	private static final int NUM_OF_PROVIDERS = 2;
 	
-	private static SystemOfUnitsService defaultService;
+	private static SystemOfUnitsService currService;
 
 	@BeforeAll
 	public static void setUp() {
-		defaultService = ServiceProvider.current().getSystemOfUnitsService();
+		currService = ServiceProvider.current().getSystemOfUnitsService();
 	}
 
 	@Test
 	public void testDefaultUnitSystemService() {
-		assertNotNull(defaultService);
-		assertEquals("tech.units.indriya.unit.DefaultSystemOfUnitsService", defaultService.getClass().getName());
-		SystemOfUnits system = defaultService.getSystemOfUnits();
+		assertNotNull(currService);
+		assertEquals("systems.uom.unicode.spi.CLDRSystemService", currService.getClass().getName());
+		SystemOfUnits system = currService.getSystemOfUnits();
 		assertNotNull(system);
-		assertEquals("tech.units.indriya.unit.Units", system.getClass().getName());
-		assertEquals("Units", system.getName());
+		assertEquals("systems.uom.unicode.CLDR", system.getClass().getName());
+		assertEquals("Unicode CLDR", system.getName());
 		assertNotNull(system.getUnits());
-		assertEquals(44, system.getUnits().size());
+		assertEquals(96, system.getUnits().size());
 	}
 
 	@Test
 	// TODO consolidate asserts
 	public void testUnitSystemServiceAlias() {
-		assertNotNull(defaultService);
-		assertEquals("tech.units.indriya.unit.DefaultSystemOfUnitsService", defaultService.getClass().getName());
-		SystemOfUnits system = defaultService.getSystemOfUnits(EXPECTED_SYSTEM_NAME);
+		assertNotNull(currService);
+		assertEquals("systems.uom.unicode.spi.CLDRSystemService", currService.getClass().getName());
+		SystemOfUnits system = currService.getSystemOfUnits(EXPECTED_SYSTEM_NAME);
 		//assertNotNull(system);
 //		assertEquals("tech.uom.domain.imaging.Imaging", system.getClass().getName());
 //		assertEquals("Imaging", system.getName());
 //		assertNotNull(system.getUnits());
 //		assertEquals(NUM_OF_UNITS_IMG, system.getUnits().size());
-//		SystemOfUnits system2 = defaultService.getSystemOfUnits("Digital Imaging");
+//		SystemOfUnits system2 = currService.getSystemOfUnits("Digital Imaging");
 //		assertEquals(system, system2);
 	}
 
