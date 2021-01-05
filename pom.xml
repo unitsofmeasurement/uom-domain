@@ -26,6 +26,7 @@
 		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
+		<jsr.version>2.1.1</jsr.version>
 		<ri.version>2.1.1</ri.version>
 		<lib.version>2.1</lib.version>
 		
@@ -69,7 +70,11 @@
 				<artifactId>indriya</artifactId>
 				<version>${ri.version}</version>
 			</dependency>
-			
+			<dependency>
+                <groupId>jakarta.inject</groupId>
+                <artifactId>jakarta.inject-api</artifactId>
+                <version>2.0.0</version>
+            </dependency>
 			<dependency>
 	            <groupId>org.junit.jupiter</groupId>
 	            <artifactId>junit-jupiter-api</artifactId>

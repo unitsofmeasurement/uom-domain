@@ -1,6 +1,6 @@
 /*
  * Units of Measurement Health Library for Java
- * Copyright (c) 2015-2020, Werner Keil and others.
+ * Copyright (c) 2015-2021, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -28,11 +28,20 @@
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 module tech.uom.health {
+	requires transitive java.logging;
     requires transitive java.measure;
     requires tech.units.indriya;
     requires tech.uom.health.api;
     requires tech.uom.lib.common;
+    requires jakarta.inject;
     
+    exports tech.uom.domain.health.spi;
     exports tech.uom.domain.health.types;
     exports tech.uom.domain.health.unit;
+    
+    provides javax.measure.spi.ServiceProvider with
+    	tech.uom.domain.health.spi.HealthServiceProvider;
+    
+    provides javax.measure.spi.SystemOfUnitsService with
+    	tech.uom.domain.health.spi.HealthSystemService;
 }

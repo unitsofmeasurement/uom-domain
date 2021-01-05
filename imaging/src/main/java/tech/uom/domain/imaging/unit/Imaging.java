@@ -27,7 +27,7 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tech.uom.domain.imaging;
+package tech.uom.domain.imaging.unit;
 
 import static systems.uom.unicode.CLDR.BYTE;
 import static systems.uom.unicode.CLDR.INCH;

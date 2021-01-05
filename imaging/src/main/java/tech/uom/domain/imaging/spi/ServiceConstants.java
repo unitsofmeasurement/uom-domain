@@ -1,6 +1,6 @@
 /*
- * Units of Measurement Imaging Library for Java
- * Copyright (c) 2018-2021, Werner Keil and others.
+ * Domain Specific Units of Measurement Extensions
+ * Copyright (c) 2018-2021, Units of Measurement
  *
  * All rights reserved.
  *
@@ -13,7 +13,7 @@
  * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions
  *    and the following disclaimer in the documentation and/or other materials provided with the distribution.
  *
- * 3. Neither the name of JSR-385, Units of Measurement nor the names of their contributors may be used to endorse or promote products
+ * 3. Neither the name of Unit-API, Units of Measurement nor the names of their contributors may be used to endorse or promote products
  *    derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
@@ -27,19 +27,13 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-module tech.uom.domain.imaging {
-    requires transitive java.measure;
-    requires transitive tech.units.indriya;
-    requires transitive systems.uom.quantity;
-    requires systems.uom.unicode;
-    requires tech.uom.lib.common;
+package tech.uom.domain.imaging.spi;
 
-    exports tech.uom.domain.imaging.spi;
-    exports tech.uom.domain.imaging.unit;
-    
-    provides javax.measure.spi.ServiceProvider with
-    	tech.uom.domain.imaging.spi.ImagingServiceProvider;
-
-    provides javax.measure.spi.SystemOfUnitsService with
-		tech.uom.domain.imaging.spi.ImagingSystemService;
+class ServiceConstants {
+	/** Name of the service provider 
+	 */
+	static final String NAME = "Imaging";
+	/** This priority is set to <CODE>11000</CODE>. 
+	 */
+	static final int PRIO = 11000;
 }

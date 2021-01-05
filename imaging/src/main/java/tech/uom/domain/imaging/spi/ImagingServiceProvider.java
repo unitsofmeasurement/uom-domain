@@ -29,6 +29,8 @@
  */
 package tech.uom.domain.imaging.spi;
 
+import static tech.uom.domain.imaging.spi.ServiceConstants.*;
+
 import javax.measure.spi.ServiceProvider;
 import javax.measure.spi.SystemOfUnitsService;
 import tech.units.indriya.spi.AbstractServiceProvider;
@@ -38,12 +40,12 @@ import tech.units.indriya.spi.AbstractServiceProvider;
  * the JDK {@link java.util.ServiceLoader} to load the services required.
  *
  * @author Werner Keil
- * @version 0.3
+ * @version 0.4
  */
 public class ImagingServiceProvider extends AbstractServiceProvider {
 
 	public int getPriority() {
-		return 800;
+		return PRIO;
 	}
 
 	@Override
@@ -53,8 +55,6 @@ public class ImagingServiceProvider extends AbstractServiceProvider {
 
 	@Override
 	public String toString() {
-		return "ImagingServiceProvider";
+		return NAME;
 	}
-	
-	
 }

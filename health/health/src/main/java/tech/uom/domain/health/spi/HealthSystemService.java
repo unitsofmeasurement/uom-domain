@@ -1,6 +1,6 @@
 /*
  * Domain Specific Units of Measurement Extensions
- * Copyright (c) 2018, Units of Measurement
+ * Copyright (c) 2018-2021, Units of Measurement
  *
  * All rights reserved.
  *
@@ -27,38 +27,53 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tech.uom.domain.imaging;
+package tech.uom.domain.health.spi;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
-import javax.measure.MetricPrefix;
-import javax.measure.IncommensurableException;
-import javax.measure.UnconvertibleException;
-import javax.measure.quantity.Length;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
-import org.junit.jupiter.api.Test;
+import javax.measure.spi.SystemOfUnits;
+import javax.measure.spi.SystemOfUnitsService;
 
-import systems.uom.quantity.Resolution;
-import tech.units.indriya.ComparableQuantity;
-import tech.units.indriya.quantity.Quantities;
-import tech.units.indriya.unit.Units;
-import tech.uom.domain.imaging.unit.Imaging;
+import tech.uom.domain.health.unit.Health;
+import tech.uom.lib.common.function.IntPrioritySupplier;
 
-public class PixelTest {
+/**
+ * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
+ * @version 0.9, January 05, 2021
+ */
+public class HealthSystemService implements SystemOfUnitsService, IntPrioritySupplier {
+	private static final int PRIO = 20;
+	private static final String DEFAULT_SYSTEM_NAME = Health.getInstance().getName();
+	private final Map<String, SystemOfUnits> souMap = new HashMap<>();
+	private final Map<String, String> aliases = new HashMap<>();
 
-	@Test
-	public void testPPItoMetreConversion() throws UnconvertibleException, IncommensurableException {
-		/*
-		 * 960 Pixel are .254 m long if the PPI is 96. 1 inch (0.0254 m) / 96 ppi x (96
-		 * x 10) px = 0.254 m
-		 */
-		final ComparableQuantity<Length> screenWidth = Quantities.getQuantity(960, Imaging.PIXEL);
-		final ComparableQuantity<Resolution> screenResolution = Quantities.getQuantity(96, Imaging.PIXEL_PER_INCH);
+	public HealthSystemService() {
+		souMap.put(Health.getInstance().getName(), Health.getInstance());
+		aliases.put("Digital Imaging", DEFAULT_SYSTEM_NAME);
+	}
 
-		ComparableQuantity<Length> ppi = screenWidth.divide(screenResolution).asType(Length.class);
-		ComparableQuantity<Length> pixelToMetre = ppi.to(Units.METRE);
-		// TODO change dependency to something else
-		assertThat(pixelToMetre.getValue().doubleValue(), is(.254));
-		assertThat(pixelToMetre.to(MetricPrefix.CENTI(Units.METRE)).getValue().doubleValue(), is(25.4));
+	public Collection<SystemOfUnits> getAvailableSystemsOfUnits() {
+		return souMap.values();
+	}
+
+	@Override
+	public SystemOfUnits getSystemOfUnits() {
+		return getSystemOfUnits(Health.getInstance().getName());
+	}
+
+	@Override
+	public SystemOfUnits getSystemOfUnits(String name) {
+		String alias = aliases.get(name);
+		if (alias != null && alias.length() > 0) {
+			return souMap.get(alias);
+		}
+		return souMap.get(name);
+	}
+
+	@Override
+	public int getPriority() {
+		return PRIO;
 	}
 }

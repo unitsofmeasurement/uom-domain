@@ -27,12 +27,14 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tech.uom.domain.imaging;
+package tech.uom.domain.health.spi;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import java.util.Collection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.measure.spi.ServiceProvider;
 import javax.measure.spi.SystemOfUnits;
@@ -42,10 +44,15 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 public class SystemOfUnitsServiceTest {
-	private static final String EXPECTED_SYSTEM_NAME = "Imaging";
-	//private static final int NUM_OF_UNITS_IMG = 3;
-	private static final int NUM_OF_PROVIDERS = 2;
-	
+	private static final Logger LOGGER = Logger.getLogger(SystemOfUnitsServiceTest.class.getName());
+	private static final Level LOG_LEVEL = Level.FINER;
+ 
+	private static final String EXPECTED_SYSTEM_NAME = "Health";
+	private static final String EXP_SYSTEM_LONG_NAME = "tech.uom.domain.health.unit.Health";
+	private static final int NUM_OF_UNITS_CURR = 4;
+	private static final int NUM_OF_PROVIDERS_CURR = 2;
+	private static final String EXP_SERVICE_NAME = "tech.uom.domain.health.spi.HealthSystemService";
+    
 	private static SystemOfUnitsService currService;
 
 	@BeforeAll
@@ -54,25 +61,25 @@ public class SystemOfUnitsServiceTest {
 	}
 
 	@Test
-	public void testDefaultUnitSystemService() {
+	public void testCurrentUnitSystemService() {
 		assertNotNull(currService);
-		assertEquals("systems.uom.unicode.spi.CLDRSystemService", currService.getClass().getName());
+		assertEquals(EXP_SERVICE_NAME, currService.getClass().getName());
 		SystemOfUnits system = currService.getSystemOfUnits();
 		assertNotNull(system);
-		assertEquals("systems.uom.unicode.CLDR", system.getClass().getName());
-		assertEquals("Unicode CLDR", system.getName());
+		assertEquals(EXP_SYSTEM_LONG_NAME, system.getClass().getName());
+		assertEquals(EXPECTED_SYSTEM_NAME, system.getName());
 		assertNotNull(system.getUnits());
-		assertEquals(96, system.getUnits().size());
+		assertEquals(NUM_OF_UNITS_CURR, system.getUnits().size());
 	}
 
 	@Test
 	// TODO consolidate asserts
 	public void testUnitSystemServiceAlias() {
 		assertNotNull(currService);
-		assertEquals("systems.uom.unicode.spi.CLDRSystemService", currService.getClass().getName());
+		assertEquals(EXP_SERVICE_NAME, currService.getClass().getName());
 		SystemOfUnits system = currService.getSystemOfUnits(EXPECTED_SYSTEM_NAME);
 		//assertNotNull(system);
-//		assertEquals("tech.uom.domain.imaging.Imaging", system.getClass().getName());
+//		assertEquals("tech.uom.domain.health.spi.Imaging", system.getClass().getName());
 //		assertEquals("Imaging", system.getName());
 //		assertNotNull(system.getUnits());
 //		assertEquals(NUM_OF_UNITS_IMG, system.getUnits().size());
@@ -84,15 +91,15 @@ public class SystemOfUnitsServiceTest {
 	public void testOtherUnitSystemServiceNumber() {
 		final Collection<ServiceProvider> providers = ServiceProvider.available();
 		assertNotNull(providers);
-		assertEquals(NUM_OF_PROVIDERS, providers.size());
+		assertEquals(NUM_OF_PROVIDERS_CURR, providers.size());
 	}
-
+	
 	@Test
 	public void testOtherUnitSystemServices() {
 		final Collection<ServiceProvider> providers = ServiceProvider.available();
 		assertNotNull(providers);
 		for (ServiceProvider sp : providers) {
-			//System.out.println(sp);
+			LOGGER.log(LOG_LEVEL, String.valueOf(sp));
 		}
 	}
 	

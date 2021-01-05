@@ -36,14 +36,14 @@ import java.util.Map;
 import javax.measure.spi.SystemOfUnits;
 import javax.measure.spi.SystemOfUnitsService;
 
+import tech.uom.domain.imaging.unit.Imaging;
 import tech.uom.lib.common.function.IntPrioritySupplier;
-import tech.uom.domain.imaging.Imaging;
 
 /**
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.9, August 04, 2019
+ * @version 1.0, January 05, 2021
  */
-class ImagingSystemService implements SystemOfUnitsService, IntPrioritySupplier {
+public class ImagingSystemService implements SystemOfUnitsService, IntPrioritySupplier {
 	private static final int PRIO = 20;
 	private static final String DEFAULT_SYSTEM_NAME = Imaging.getInstance().getName();
 	private final Map<String, SystemOfUnits> souMap = new HashMap<>();
