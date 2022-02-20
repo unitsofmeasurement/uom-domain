@@ -52,7 +52,7 @@ public class SystemOfUnitsServiceTest {
 	private static final int NUM_OF_UNITS_CURR = 3;
 	private static final int NUM_OF_PROVIDERS = 3;
 	private static final String EXP_SERVICE_NAME = "tech.uom.domain.imaging.spi.ImagingSystemService";    
-	private static final int NUM_OF_UNITS_OTH = 103;
+	private static final int NUM_OF_UNITS_OTH = 110;
 	
 	private static SystemOfUnitsService currService;
 
