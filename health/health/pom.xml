@@ -128,32 +128,6 @@
                 <artifactId>maven-javadoc-plugin</artifactId>
             </plugin>
         </plugins>
-    </build>
-    
-    <!-- Additional repositories -->
-    <!-- Helps to resolve Parent POM and Snapshot artifacts -->
-    <repositories>
-        <repository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>bintray-release</id>
-            <name>libs-release</name>
-            <url>https://oss.jfrog.org/artifactory/libs-release</url>
-        </repository>
-        <repository>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-            <id>bintray-snapshot</id>
-            <name>libs-snapshot</name>
-            <url>https://oss.jfrog.org/artifactory/libs-snapshot</url>
-        </repository>
-        <repository>
-            <id>jcenter</id>
-            <name>JCenter</name>
-            <url>https://jcenter.bintray.com</url>
-        </repository>
-    </repositories>
+    </build>    
     <url>https://github.com/unitsofmeasurement/uom-domain/tree/master/health</url>
 </project>
