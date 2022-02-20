@@ -51,7 +51,7 @@
 
 	<modules>
 		<module>health-api</module>
-		<!--module>health module -->
+		<module>health</module>
 	</modules>
 
 	<dependencyManagement>
