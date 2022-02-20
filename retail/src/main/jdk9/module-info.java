@@ -1,6 +1,6 @@
 /*
  * Units of Measurement Retail Specific Library for Java
- * Copyright (c) 2015-2020, Werner Keil and others.
+ * Copyright (c) 2015-2022, Werner Keil and others.
  *
  * All rights reserved.
  *

@@ -13,3 +13,4 @@ Currently the following libraries/modules are defined
   * [**Health**](health/health) Health Module (Java SE 8 and above)
 * [**Imaging**](imaging) Digital Imaging Unit module
 * [**Retail**](retail) Retail Quantities (reusable across Java ME or SE)
+* [**Weather**](weather) Weather & Climate
