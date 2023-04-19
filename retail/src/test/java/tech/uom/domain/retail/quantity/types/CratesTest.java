@@ -27,9 +27,37 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tech.uom.domain.retail.quantity;
+package tech.uom.domain.retail.quantity.types;
 
-import javax.measure.Quantity;
+import static org.junit.jupiter.api.Assertions.*;
 
-public interface Each<E extends Quantity<E>> extends Quantity<E> {
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+
+class CratesTest {
+	static Crates c;
+
+	@BeforeAll
+	static void setup() {
+		 c = Crates.DOZEN;
+	}
+	
+	@Test
+	void testGetValue() {
+		assertEquals(12, c.getValue());
+	}
+
+	@Test
+	void testGetSymbol() {
+		assertEquals("d", c.getSymbol());
+	}
+
+	@Test
+	void testGetName() {
+		assertEquals("Dozen", c.getName());
+	}
+
+	void testName() {
+		assertEquals("DOZEN", c.name());
+	}	
 }

@@ -1,6 +1,6 @@
 /*
  * Units of Measurement Retail Specific Library for Java
- * Copyright (c) 2015-2020, Werner Keil and others.
+ * Copyright (c) 2015-2023, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -29,7 +29,5 @@
  */
 package tech.uom.domain.retail.quantity;
 
-import javax.measure.Quantity;
-
-public interface Box extends Quantity<Each> {
+public interface Box extends Each<Box> {
 }

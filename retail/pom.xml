@@ -9,34 +9,34 @@
 	</parent>
 	<artifactId>uom-retail-quantity</artifactId>
 	<name>Units of Measurement Retail Quantities</name>
-    <url>https://unitsofmeasurement.github.io/uom-domain/</url>
-    <description>Reusable Quantities for Units of Measurement in Retail</description>
+	<url>https://unitsofmeasurement.github.io/uom-domain/</url>
+	<description>Reusable Quantities for Units of Measurement in Retail</description>
 	<licenses>
-        <license>
-            <name>BSD 3-Clause</name>
-            <url>LICENSE</url>
-        </license>
-    </licenses>
-    <scm>
-        <connection>scm:git:https://github.com/unitsofmeasurement/uom-domain.git</connection>
-        <developerConnection>scm:git:https://github.com/unitsofmeasurement/uom-domain.git</developerConnection>
-        <url>https://github.com/unitsofmeasurement/uom-domain.git</url>
-    </scm>
-    <developers>
-        <developer>
-            <id>keilw</id>
-            <name>Werner Keil</name>
-            <email>werner@catmedia.us</email>
-            <organization>Creative Arts &amp; Technologies</organization>
-            <organizationUrl>http://www.catmedia.us</organizationUrl>
-            <timezone>+1</timezone>
-            <roles>
-                <role>Architect</role>
-                <role>Java Developer</role>
-                <role>Spec Lead</role>
-            </roles>
-        </developer>
-    </developers>
+		<license>
+			<name>BSD 3-Clause</name>
+			<url>LICENSE</url>
+		</license>
+	</licenses>
+	<scm>
+		<connection>scm:git:https://github.com/unitsofmeasurement/uom-domain.git</connection>
+		<developerConnection>scm:git:https://github.com/unitsofmeasurement/uom-domain.git</developerConnection>
+		<url>https://github.com/unitsofmeasurement/uom-domain.git</url>
+	</scm>
+	<developers>
+		<developer>
+			<id>keilw</id>
+			<name>Werner Keil</name>
+			<email>werner@catmedia.us</email>
+			<organization>Creative Arts &amp; Technologies</organization>
+			<organizationUrl>http://www.catmedia.us</organizationUrl>
+			<timezone>+1</timezone>
+			<roles>
+				<role>Architect</role>
+				<role>Java Developer</role>
+				<role>Spec Lead</role>
+			</roles>
+		</developer>
+	</developers>
 	<dependencies>
 		<dependency>
 			<groupId>javax.measure</groupId>
@@ -45,6 +45,38 @@
 		<dependency>
 			<groupId>tech.units</groupId>
 			<artifactId>indriya</artifactId>
+		</dependency>
+
+		<!-- Test dependencies -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-params</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-launcher</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-runner</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-library</artifactId>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
@@ -72,6 +104,17 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<reuseForks>false</reuseForks>
+					<argLine>
+						--add-opens tech.uom.domain.retail.quantity=ALL-UNNAMED
+					</argLine>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
