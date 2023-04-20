@@ -13,6 +13,7 @@
 	<name>Units of Measurement Domain Specific Modules</name>
 	<version>2.1-SNAPSHOT</version>
 	<modules>
+		<module>cloud</module>
 		<module>energy</module>
 		<module>health</module>
 		<module>imaging</module>

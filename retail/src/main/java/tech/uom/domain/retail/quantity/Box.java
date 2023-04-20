@@ -29,5 +29,7 @@
  */
 package tech.uom.domain.retail.quantity;
 
-public interface Box extends Each<Box> {
+import javax.measure.Quantity;
+
+public interface Box extends Quantity<Box> {
 }

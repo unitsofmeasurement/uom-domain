@@ -27,9 +27,62 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tech.uom.domain.retail.quantity;
+package tech.uom.domain.retail.quantity.types;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static tech.uom.domain.retail.quantity.types.Boxes.*;
+import static tech.uom.domain.retail.quantity.types.RetailSystem.EACH_BOX;
 
 import javax.measure.Quantity;
 
-public interface Crate extends Quantity<Crate> {
+import org.junit.jupiter.api.Test;
+
+import tech.units.indriya.quantity.Quantities;
+import tech.uom.domain.retail.quantity.Box;
+import tech.uom.domain.retail.quantity.Each;
+
+class BoxesTest {
+	static Boxes b = Boxes.SMALL_BOX;
+	static Quantity<Box> box1 = Quantities.getQuantity(1, SMALL_BOX);
+	static Quantity<Box> box2 = Quantities.getQuantity(2, BIG_BOX);
+	static Quantity<Each<Box>> eachBoxes = Quantities.getQuantity(1, EACH_BOX);	
+	
+	@Test
+	void testGetValue() {
+		assertEquals(1, b.getValue());
+	}
+
+	@Test
+	void testGetSymbol() {
+		assertEquals("s", b.getSymbol());
+	}
+
+	@Test
+	void testGetName() {
+		assertEquals("Small Box", b.getName());
+	}
+
+	@Test
+	void testName() {
+		assertEquals("SMALL_BOX", b.name());
+	}
+	
+	@Test
+	void testCrate1() {
+		assertEquals(1, box1.getValue());
+		assertEquals(SMALL_BOX, box1.getUnit());
+	}
+	
+	@Test
+	void testCrate2() {
+		assertEquals(2, box2.getValue());
+		assertEquals(BIG_BOX, box2.getUnit());
+	}
+	
+	@Test
+	void testEachCrate2() {
+		assertEquals(1, eachBoxes.getValue());
+		assertEquals(EACH_BOX, eachBoxes.getUnit());
+		assertEquals("EB", eachBoxes.getUnit().toString());
+	}
 }

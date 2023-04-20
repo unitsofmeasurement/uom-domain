@@ -29,18 +29,24 @@
  */
 package tech.uom.domain.retail.quantity.types;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static tech.uom.domain.retail.quantity.types.Crates.DOZEN;
+import static tech.uom.domain.retail.quantity.types.Crates.SIXPACK;
+import static tech.uom.domain.retail.quantity.types.RetailSystem.EACH_CRATE;
 
-import org.junit.jupiter.api.BeforeAll;
+import javax.measure.Quantity;
+
 import org.junit.jupiter.api.Test;
 
-class CratesTest {
-	static Crates c;
+import tech.units.indriya.quantity.Quantities;
+import tech.uom.domain.retail.quantity.Crate;
+import tech.uom.domain.retail.quantity.Each;
 
-	@BeforeAll
-	static void setup() {
-		 c = Crates.DOZEN;
-	}
+class CratesTest {
+	static Crates c = Crates.DOZEN;
+	static Quantity<Crate> crate1 = Quantities.getQuantity(1, DOZEN);
+	static Quantity<Crate> crate2 = Quantities.getQuantity(2, SIXPACK);
+	static Quantity<Each<Crate>> eachCrates = Quantities.getQuantity(1, EACH_CRATE);	
 	
 	@Test
 	void testGetValue() {
@@ -57,7 +63,27 @@ class CratesTest {
 		assertEquals("Dozen", c.getName());
 	}
 
+	@Test
 	void testName() {
 		assertEquals("DOZEN", c.name());
-	}	
+	}
+	
+	@Test
+	void testCrate1() {
+		assertEquals(1, crate1.getValue());
+		assertEquals(DOZEN, crate1.getUnit());
+	}
+	
+	@Test
+	void testCrate2() {
+		assertEquals(2, crate2.getValue());
+		assertEquals(SIXPACK, crate2.getUnit());
+	}
+	
+	@Test
+	void testEachCrate2() {
+		assertEquals(1, eachCrates.getValue());
+		assertEquals(EACH_CRATE, eachCrates.getUnit());
+		assertEquals("EC", eachCrates.getUnit().toString());
+	}
 }

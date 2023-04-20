@@ -1,6 +1,6 @@
 /**
  * Domain Specific Units of Measurement Extensions
- * Copyright (c) 2018, Units of Measurement
+ * Copyright (c) 2018-2023, Units of Measurement
  *
  * All rights reserved.
  *
