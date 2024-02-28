@@ -36,6 +36,7 @@
         <hamcrest.version>2.2</hamcrest.version>
         <junit.jupiter.version>5.8.2</junit.jupiter.version>
         <junit.platform.version>1.8.2</junit.platform.version>
+        <maven.surefire.version>3.2.5</maven.surefire.version>
 	</properties>
 
     <!-- Developers and Contributors -->
@@ -148,7 +149,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>3.0.0-M9</version>
+          <version>${maven.surefire.version}</version>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -197,7 +198,7 @@
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>build-helper-maven-plugin</artifactId>
-						<version>3.2.0</version>
+						<version>3.5.0</version>
                         <executions>
                             <execution>
                                 <id>add-jdk9-source</id>
