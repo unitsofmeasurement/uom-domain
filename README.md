@@ -12,5 +12,5 @@ Currently the following libraries/modules are defined
   * [**Health-API**](health/health-api) Healthcare API (reusable across multiple platforms)
   * [**Health**](health/health) Health Module (Java SE 8 and above)
 * [**Imaging**](imaging) Digital Imaging Unit module
-* [**Retail**](retail) Retail Quantities (reusable across Java ME or SE)
+* [**Retail**](retail) Retail Quantities
 * [**Weather**](weather) Weather & Climate
