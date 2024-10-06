@@ -9,8 +9,9 @@
 	</parent>
 	<artifactId>uom-imaging</artifactId>
 	<name>Units of Measurement for Imaging</name>
-	<description>Units for Digital Imaging</description>
-
+	<description>Units for Digital Imaging and Print</description>
+	<url>https://unitsofmeasurement.github.io/uom-domain/</url>
+	
 	<!-- ======================================================= -->
 	<!-- Build Settings -->
 	<!-- ======================================================= -->
@@ -37,7 +38,7 @@
             <id>keilw</id>
             <name>Werner Keil</name>
             <email>werner@catmedia.us</email>
-            <organization>Creative Arts &amp; Technologies</organization>
+            <organization>CATMedia</organization>
             <organizationUrl>http://www.catmedia.us</organizationUrl>
             <timezone>+1</timezone>
             <roles>
@@ -131,6 +132,5 @@
 				<artifactId>maven-javadoc-plugin</artifactId>
 			</plugin>
 		</plugins>
-	</build>
-	<url>https://unitsofmeasurement.github.io/uom-domain/</url>
+	</build>	
 </project>
