@@ -31,10 +31,13 @@ package tech.uom.domain.imaging.unit;
 
 import static systems.uom.unicode.CLDR.BYTE;
 import static systems.uom.unicode.CLDR.INCH;
+import static tech.units.indriya.AbstractUnit.ONE;
 import static tech.units.indriya.unit.Units.METRE;
+import static tech.units.indriya.unit.Units.SECOND;
 
 import javax.measure.Quantity;
 import javax.measure.Unit;
+import javax.measure.quantity.Frequency;
 import javax.measure.quantity.Length;
 import javax.measure.spi.SystemOfUnits;
 
@@ -45,7 +48,7 @@ import tech.units.indriya.AbstractUnit;
 
 /**
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.3
+ * @version 0.4
  */
 public class Imaging extends AbstractSystemOfUnits {
 
@@ -92,7 +95,15 @@ public class Imaging extends AbstractSystemOfUnits {
     @SuppressWarnings("unused")
 	private static final Unit<Length> COMPUTER_POINT = PIXEL;
 
-	
+    ///////////////
+    // Frequency //
+    ///////////////
+    /**
+     * A unit used to measure the frequency (rate) at which an imaging device
+     * produces unique consecutive images (standard name <code>fps</code>).
+     */
+    protected static final Unit<Frequency> FRAMES_PER_SECOND = addUnit(ONE.divide(SECOND)).asType(Frequency.class);
+    
 	/**
 	 * Default constructor (prevents this class from being instantiated).
 	 */

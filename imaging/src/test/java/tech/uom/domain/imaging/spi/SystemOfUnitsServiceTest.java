@@ -49,7 +49,7 @@ public class SystemOfUnitsServiceTest {
     
 	private static final String EXPECTED_SYSTEM_NAME = "Imaging";
 	private static final String EXP_SYSTEM_LONG_NAME = "tech.uom.domain.imaging.unit." + EXPECTED_SYSTEM_NAME;
-	private static final int NUM_OF_UNITS_CURR = 3;
+	private static final int NUM_OF_UNITS_CURR = 4;
 	private static final int NUM_OF_PROVIDERS = 3;
 	private static final String EXP_SERVICE_NAME = "tech.uom.domain.imaging.spi.ImagingSystemService";    
 	private static final int NUM_OF_UNITS_OTH = 110;
