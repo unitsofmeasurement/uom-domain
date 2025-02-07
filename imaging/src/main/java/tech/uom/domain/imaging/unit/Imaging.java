@@ -1,6 +1,6 @@
 /*
  * Domain Specific Units of Measurement Extensions
- * Copyright (c) 2018-2020, Units of Measurement
+ * Copyright (c) 2018-2025, Units of Measurement
  *
  * All rights reserved.
  *
@@ -37,6 +37,7 @@ import static tech.units.indriya.unit.Units.SECOND;
 
 import javax.measure.Quantity;
 import javax.measure.Unit;
+import javax.measure.quantity.Dimensionless;
 import javax.measure.quantity.Frequency;
 import javax.measure.quantity.Length;
 import javax.measure.spi.SystemOfUnits;
@@ -45,10 +46,11 @@ import systems.uom.quantity.Information;
 import systems.uom.quantity.Resolution;
 import tech.units.indriya.AbstractSystemOfUnits;
 import tech.units.indriya.AbstractUnit;
+import tech.units.indriya.unit.ProductUnit;
 
 /**
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.4
+ * @version 0.5
  */
 public class Imaging extends AbstractSystemOfUnits {
 
@@ -94,6 +96,12 @@ public class Imaging extends AbstractSystemOfUnits {
      */
     @SuppressWarnings("unused")
 	private static final Unit<Length> COMPUTER_POINT = PIXEL;
+    
+    /**
+	 * Holds the dimensionless unit <code>IMAGE</code>.
+	 * 
+	 */
+	public static final Unit<Dimensionless> IMAGE = new ProductUnit<>();
 
     ///////////////
     // Frequency //

@@ -32,7 +32,7 @@ package tech.uom.domain.health.unit;
 import javax.measure.Unit;
 /*
  *  Unit-API - Units of Measurement API for Java
- *  Copyright 2013-2019, Werner Keil and individual
+ *  Copyright 2013-2025, Werner Keil and individual
  *  contributors by the @author tag.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -57,7 +57,7 @@ import tech.units.indriya.unit.BaseUnit;
 
 /**
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.6
+ * @version 0.7
  */
 public class Health extends AbstractSystemOfUnits {
 
@@ -77,7 +77,7 @@ public class Health extends AbstractSystemOfUnits {
 
     /** BPM */
     public static final Unit<HeartRate> BPM = addUnit(BEAT.divide(Units.SECOND.multiply(60)).asType(HeartRate.class));
-
+ 
     @Override
     public String getName() {
             return Health.class.getSimpleName();
