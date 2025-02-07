@@ -46,11 +46,13 @@ import systems.uom.quantity.Information;
 import systems.uom.quantity.Resolution;
 import tech.units.indriya.AbstractSystemOfUnits;
 import tech.units.indriya.AbstractUnit;
+import tech.units.indriya.format.EBNFUnitFormat;
+import tech.units.indriya.format.SimpleUnitFormat;
 import tech.units.indriya.unit.ProductUnit;
 
 /**
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.5
+ * @version 0.6
  */
 public class Imaging extends AbstractSystemOfUnits {
 
@@ -101,7 +103,7 @@ public class Imaging extends AbstractSystemOfUnits {
 	 * Holds the dimensionless unit <code>IMAGE</code>.
 	 * 
 	 */
-	public static final Unit<Dimensionless> IMAGE = new ProductUnit<>();
+	public static final Unit<Dimensionless> IMAGE = addUnit(new ProductUnit<>(), "Image", "img");
 
     ///////////////
     // Frequency //
@@ -134,6 +136,29 @@ public class Imaging extends AbstractSystemOfUnits {
 	}
 
 	/**
+	 * Adds a new unit not mapped to any specified quantity type and puts a text as
+	 * symbol or label.
+	 *
+	 * @param unit    the unit being added.
+	 * @param name    the string to use as name
+	 * @param text    the string to use as label or symbol
+	 * @param isLabel if the string should be used as a label or not
+	 * @return <code>unit</code>.
+	 */
+	private static <U extends Unit<?>> U addUnit(U unit, String name, String text, boolean isLabel) {
+		if (isLabel) {
+			SimpleUnitFormat.getInstance().label(unit, text);
+			EBNFUnitFormat.getInstance().label(unit, text);
+		}
+		if (name != null && unit instanceof AbstractUnit) {
+			return Helper.addUnit(INSTANCE.units, unit, name);
+		} else {
+			INSTANCE.units.add(unit);
+		}
+		return unit;
+	}
+	
+	/**
 	 * Adds a new unit not mapped to any specified quantity type.
 	 *
 	 * @param unit
@@ -157,14 +182,7 @@ public class Imaging extends AbstractSystemOfUnits {
 	 */
 	@SuppressWarnings({ "unchecked" })
 	private static <U extends Unit<?>> U addUnit(U unit, String name, String label) {
-		if (name != null && unit instanceof AbstractUnit) {
-			AbstractUnit<?> aUnit = (AbstractUnit<?>) unit;
-			// aUnit.setName(name);
-			INSTANCE.units.add(aUnit);
-			return (U) aUnit;
-		}
-		INSTANCE.units.add(unit);
-		return unit;
+		return addUnit(unit, name, label, true);
 	}
 
 	/**
