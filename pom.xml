@@ -120,7 +120,7 @@
 		</dependencies>
 	</dependencyManagement>
 
-	<!-- Deployment to public servers -->
+	<!-- Deployment to public servers 
 	<distributionManagement>
 		<snapshotRepository>
 			<id>ossrh</id>
@@ -130,7 +130,7 @@
 			<id>ossrh</id>
 			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
 		</repository>
-	</distributionManagement>
+	</distributionManagement -->
 
 	<!-- Additional repositories -->
     <!-- Helps to resolve Parent POM and Snapshot artifacts -->
